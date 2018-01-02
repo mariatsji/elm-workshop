@@ -5,10 +5,28 @@ module Part1 exposing (..)
   It should have two Data Constructors that replace the dummy datatype `Todo`
   One should be called `Circle` and contain a Float to represent a diameter in cm
   The other should be called `Square` and contain a Float to represent one of (the equal) side lengths in cm
+
+  You can read about creating your own data types here :
+  http://elm-lang.org/docs/syntax#union-types
+
+  It is also super-common to use pattern-matching on data types such as Shape.
+  You can read about it here :
+  http://elm-lang.org/docs/syntax#conditionals
 --}
--- type Shape = Todo
 type Shape = Circle Float | Square Float
 
+{--
+This is an example of a function in Elm. The first line says that it
+is called `size` and that it accepts 1 argument of type Shape, returning a Float.
+
+(This line can be skipped, the compiler can figure this out by itself, but it is
+nice to include for human readers for all but the most trivial functions)
+
+The implementation of the function follows after. We say (once more) that the name
+of the function is `size`, and we call the argument of the function `shape`.
+
+We use a case expression to implement the function here.
+--}
 size : Shape -> Float
 size shape =
   case shape of

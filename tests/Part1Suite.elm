@@ -1,4 +1,4 @@
-module TestSuite exposing (..)
+module Part1Suite exposing (..)
 
 import Expect exposing (Expectation)
 import Test exposing (..)
