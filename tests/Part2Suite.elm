@@ -18,4 +18,6 @@ suite =
                 in Expect.equal (Circle 10.0) <| Part2.biggerCircle circle
        ,test "creates a lambda that doubles an int" <|
           \_ -> Expect.equal 2 <| Part2.f 1
+       ,test "finds the fifth fib number" <|
+          \_ -> Expect.equal 8 (Part2.fib 5)
       ]

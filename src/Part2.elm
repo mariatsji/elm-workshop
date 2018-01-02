@@ -35,3 +35,15 @@ Read about functions and lambdas here : http://elm-lang.org/docs/syntax#function
 --}
 f : Int -> Int
 f = \n -> n * 2
+
+{--
+Implement the fibonacci sequence 1,1,2,3,5,8,.. which is defined by being the sum
+of the two previous fibonacci numbers in the sequence, and the first two being 1
+
+(Use a 0-based index here)
+--}
+fib : Int -> Int
+fib x
+  = if x > 1
+      then fib (x - 1) + fib (x - 2)
+      else 1
