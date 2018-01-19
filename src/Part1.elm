@@ -56,3 +56,4 @@ toSquare shape =
   case shape of
           Square x -> shape
           Circle x -> Square x
+
