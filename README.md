@@ -9,10 +9,10 @@ Use an IDE with Elm syntax highlighting. Choices :
 - Something else
 
 # Make
-    elm-make src/Main.elm
+    ./make.sh
 
 # Run tests
     elm test --watch
 
-# Run slides
+# Serve slides
   ./serve.sh
