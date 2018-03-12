@@ -37,9 +37,17 @@ main =
             ]
 
         , md  """
-        # Easy app setup
+        # Meet Elm
         ```elm
-        $ elm-package install elm-lang/html
+        -- Boolean
+        True  : Bool
+        False : Bool
+
+        42    : number  -- Int or Float depending on usage
+        3.14  : Float
+
+        'a'   : Char
+        "abc" : String
         ```
         And we're ready to go!
         """

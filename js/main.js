@@ -16622,7 +16622,7 @@ var _mariatsji$elm_workshop$Main$main = A2(
 				}),
 			_1: {
 				ctor: '::',
-				_0: _xarvh$elm_slides$Slides$md('\n        # Easy app setup\n        ```elm\n        $ elm-package install elm-lang/html\n        ```\n        And we\'re ready to go!\n        '),
+				_0: _xarvh$elm_slides$Slides$md('\n        # Meet Elm\n        ```elm\n        -- Boolean\n        True  : Bool\n        False : Bool\n\n        42    : number  -- Int or Float depending on usage\n        3.14  : Float\n\n        \'a\'   : Char\n        \"abc\" : String\n        ```\n        And we\'re ready to go!\n        '),
 				_1: {ctor: '[]'}
 			}
 		}
