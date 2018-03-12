@@ -13,7 +13,13 @@ module Part1 exposing (..)
   You can read about it here :
   http://elm-lang.org/docs/syntax#conditionals
 --}
-type Shape = Circle Float | Square Float
+
+
+type Shape
+    = Circle Float
+    | Square Float
+
+
 
 {--
 This is an example of a function in Elm. The first line says that it
@@ -27,11 +33,18 @@ of the function is `size`, and we call the argument of the function `shape`.
 
 We use a case expression to implement the function here.
 --}
+
+
 size : Shape -> Float
 size shape =
-  case shape of
-          Circle diameter -> diameter
-          Square side -> side
+    case shape of
+        Circle diameter ->
+            diameter
+
+        Square side ->
+            side
+
+
 
 {--
   Complete this function that accepts a Shape, and returns a Circle.
@@ -39,11 +52,18 @@ size shape =
     - Given a Circle, it should be returned unchanged
     - Given a Square, it should return a Circle as wide as the Square
 --}
+
+
 toCircle : Shape -> Shape
 toCircle shape =
-  case shape of
-          Circle x -> shape
-          Square x -> Circle x
+    case shape of
+        Circle x ->
+            shape
+
+        Square x ->
+            Circle x
+
+
 
 {--
   Complete this function that accepts a Shape, and returns a Square.
@@ -51,9 +71,13 @@ toCircle shape =
     - Given a Square, it should be returned unchanged
     - Given a Circle, it should return a Square as wide as the Circle
 --}
+
+
 toSquare : Shape -> Shape
 toSquare shape =
-  case shape of
-          Square x -> shape
-          Circle x -> Square x
+    case shape of
+        Square x ->
+            shape
 
+        Circle x ->
+            Square x

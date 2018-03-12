@@ -16517,29 +16517,53 @@ var _xarvh$elm_slides$Slides$app = F2(
 				subscriptions: _xarvh$elm_slides$Slides$subscriptions(options)
 			});
 	});
-var _mariatsji$elm_workshop$Main$main = A2(
-	_xarvh$elm_slides$Slides$app,
+var _mariatsji$elm_workshop$Main$customStyleOptions = _elm_lang$core$Native_Utils.update(
 	_xarvh$elm_slides$Slides$slidesDefaultOptions,
 	{
+		style: A2(
+			_elm_lang$core$List$append,
+			{
+				ctor: '::',
+				_0: _rtfeldman$elm_css$Css_Elements$img(
+					{
+						ctor: '::',
+						_0: _rtfeldman$elm_css$Css$maxWidth(
+							_rtfeldman$elm_css$Css$px(100)),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			},
+			A4(
+				_xarvh$elm_slides$Slides_Styles$elmMinimalist,
+				_rtfeldman$elm_css$Css$hex('#fff'),
+				_rtfeldman$elm_css$Css$hex('#ccc'),
+				_rtfeldman$elm_css$Css$px(16),
+				_rtfeldman$elm_css$Css$hex('#000'))),
+		slideAnimator: _xarvh$elm_slides$Slides_SlideAnimation$scroll
+	});
+var _mariatsji$elm_workshop$Main$main = A2(
+	_xarvh$elm_slides$Slides$app,
+	_mariatsji$elm_workshop$Main$customStyleOptions,
+	{
 		ctor: '::',
-		_0: _xarvh$elm_slides$Slides$md('\n        # A markdown slide\n        _stuff follows..._\n        '),
+		_0: _xarvh$elm_slides$Slides$md('\n        # ![Elm logo](images/elm-logo.png \"FINN.no\") Elm, hands-on\n\n        ![FINN logo](images/finn-logo.png \"FINN.no\")\n\n        ##### Christopher Kolstad, Stig Kleppe-Jørgensen, Sjur Millidahl\n        '),
 		_1: {
 			ctor: '::',
 			_0: _xarvh$elm_slides$Slides$mdFragments(
 				{
 					ctor: '::',
-					_0: 'Another slide with three fragments',
+					_0: 'Functional frontend language',
 					_1: {
 						ctor: '::',
-						_0: 'This appears later',
-						_1: {
-							ctor: '::',
-							_0: 'And this even later',
-							_1: {ctor: '[]'}
-						}
+						_0: 'Statically typed',
+						_1: {ctor: '[]'}
 					}
 				}),
-			_1: {ctor: '[]'}
+			_1: {
+				ctor: '::',
+				_0: _xarvh$elm_slides$Slides$md('\n        ```type Team = Red | Blue```\n        '),
+				_1: {ctor: '[]'}
+			}
 		}
 	})();
 var _mariatsji$elm_workshop$Part1$size = function (shape) {

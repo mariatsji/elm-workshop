@@ -1,7 +1,10 @@
 module Part2 exposing (..)
 
+
 type alias Circle =
-  { area : Float }
+    { area : Float }
+
+
 
 {--
 Given a Circle type with an area, return the radius of the circle.
@@ -13,9 +16,17 @@ http://elm-lang.org/docs/syntax#records
 Try to use a let / in expression, which you can read about here :
 http://elm-lang.org/docs/syntax#let-expressions
 --}
+
+
 findRadius : Circle -> Float
-findRadius {area} = let rSquared = area / pi
-                    in sqrt rSquared
+findRadius { area } =
+    let
+        rSquared =
+            area / pi
+    in
+        sqrt rSquared
+
+
 
 {--
 Implement the biggerCircle function. It should return a circle with twice the area.
@@ -23,8 +34,12 @@ Implement the biggerCircle function. It should return a circle with twice the ar
 You can read some more about records here :
 http://elm-lang.org/docs/syntax#records
 --}
+
+
 biggerCircle : Circle -> Circle
-biggerCircle shape = { shape | area = shape.area * 2 }
+biggerCircle shape =
+    { shape | area = shape.area * 2 }
+
 
 
 {--
@@ -33,8 +48,13 @@ Take one argument of type Int and return an Int twice as big
 
 Read about functions and lambdas here : http://elm-lang.org/docs/syntax#functions
 --}
+
+
 f : Int -> Int
-f = \n -> n * 2
+f =
+    \n -> n * 2
+
+
 
 {--
 Implement the fibonacci sequence 1,1,2,3,5,8,.. which is defined by being the sum
@@ -42,8 +62,11 @@ of the two previous fibonacci numbers in the sequence, and the first two being 1
 
 (Use a 0-based index here)
 --}
+
+
 fib : Int -> Int
-fib x
-  = if x > 1
-      then fib (x - 1) + fib (x - 2)
-      else 1
+fib x =
+    if x > 1 then
+        fib (x - 1) + fib (x - 2)
+    else
+        1
