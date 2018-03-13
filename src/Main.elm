@@ -32,8 +32,9 @@ main =
         """
 
         , mdFragments
-            [ "Functional frontend language"
-            , "Statically typed"
+            [ "# The Elm Language"
+            , "## Functional frontend language"
+            , "## Statically typed"
             ]
 
         , md  """
@@ -49,6 +50,41 @@ main =
         'a'   : Char
         "abc" : String
         ```
-        And we're ready to go!
         """
+
+        , md """
+        # A function
+        ```elm
+        {-- A comment for the function below
+            The type signature indicates a function from
+            String to Bool
+        --}
+        hasOddLength : String -> Bool
+        hasOddLength s = String.length s % 2 == 1
+        ```
+        """
+
+        , mdFragments
+          [ "# Create a Data Type"
+          , """
+            ```elm
+            type TrafficLight          -- The Data Type
+              = Green | Yellow | Red   -- Data Constructors
+            ```
+            """
+          , "`TrafficLight` seen in type signatures"
+          , "`Green`, `Yellow`, `Red` seen in function implementations"]
+
+        , md """
+          # Using our TrafficLight
+          ```elm
+          -- Notice that we use the data type in the type signature
+          -- (Types belong at the type level)
+          crossSafely : TrafficLight -> Bool
+          crossSafely tl =
+            case tl of
+              Green -> True -- Type destructed to Data constructor
+              _ -> False    -- Wildcard match
+          ```
+          """
         ]

@@ -16613,17 +16613,50 @@ var _mariatsji$elm_workshop$Main$main = A2(
 			_0: _xarvh$elm_slides$Slides$mdFragments(
 				{
 					ctor: '::',
-					_0: 'Functional frontend language',
+					_0: '# The Elm Language',
 					_1: {
 						ctor: '::',
-						_0: 'Statically typed',
-						_1: {ctor: '[]'}
+						_0: '## Functional frontend language',
+						_1: {
+							ctor: '::',
+							_0: '## Statically typed',
+							_1: {ctor: '[]'}
+						}
 					}
 				}),
 			_1: {
 				ctor: '::',
-				_0: _xarvh$elm_slides$Slides$md('\n        # Meet Elm\n        ```elm\n        -- Boolean\n        True  : Bool\n        False : Bool\n\n        42    : number  -- Int or Float depending on usage\n        3.14  : Float\n\n        \'a\'   : Char\n        \"abc\" : String\n        ```\n        And we\'re ready to go!\n        '),
-				_1: {ctor: '[]'}
+				_0: _xarvh$elm_slides$Slides$md('\n        # Meet Elm\n        ```elm\n        -- Boolean\n        True  : Bool\n        False : Bool\n\n        42    : number  -- Int or Float depending on usage\n        3.14  : Float\n\n        \'a\'   : Char\n        \"abc\" : String\n        ```\n        '),
+				_1: {
+					ctor: '::',
+					_0: _xarvh$elm_slides$Slides$md('\n        # A function\n        ```elm\n        {-- A comment for the function below\n            The type signature indicates a function from\n            String to Bool\n        --}\n        hasOddLength : String -> Bool\n        hasOddLength s = String.length s % 2 == 1\n        ```\n        '),
+					_1: {
+						ctor: '::',
+						_0: _xarvh$elm_slides$Slides$mdFragments(
+							{
+								ctor: '::',
+								_0: '# Create a Data Type',
+								_1: {
+									ctor: '::',
+									_0: '\n            ```elm\n            type TrafficLight          -- The Data Type\n              = Green | Yellow | Red   -- Data Constructors\n            ```\n            ',
+									_1: {
+										ctor: '::',
+										_0: '`TrafficLight` seen in type signatures',
+										_1: {
+											ctor: '::',
+											_0: '`Green`, `Yellow`, `Red` seen in function implementations',
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}),
+						_1: {
+							ctor: '::',
+							_0: _xarvh$elm_slides$Slides$md('\n          # Using our TrafficLight\n          ```elm\n          -- Notice that we use the data type in the type signature\n          -- (Types belong at the type level)\n          crossSafely : TrafficLight -> Bool\n          crossSafely tl =\n            case tl of\n              Green -> True -- Type destructed to Data constructor\n              _ -> False    -- Wildcard match\n          ```\n          '),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
 			}
 		}
 	})();
