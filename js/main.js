@@ -16616,44 +16616,110 @@ var _mariatsji$elm_workshop$Main$main = A2(
 					_0: '# The Elm Language',
 					_1: {
 						ctor: '::',
-						_0: '## Functional frontend language',
+						_0: 'Functional frontend language',
 						_1: {
 							ctor: '::',
-							_0: '## Statically typed',
-							_1: {ctor: '[]'}
+							_0: 'Statically typed',
+							_1: {
+								ctor: '::',
+								_0: 'Compiled frontend catches bugs before runtime',
+								_1: {
+									ctor: '::',
+									_0: 'Once compiled, it works',
+									_1: {ctor: '[]'}
+								}
+							}
 						}
 					}
 				}),
 			_1: {
 				ctor: '::',
-				_0: _xarvh$elm_slides$Slides$md('\n        # Meet Elm\n        ```elm\n        -- Boolean\n        True  : Bool\n        False : Bool\n\n        42    : number  -- Int or Float depending on usage\n        3.14  : Float\n\n        \'a\'   : Char\n        \"abc\" : String\n        ```\n        '),
+				_0: _xarvh$elm_slides$Slides$md('\n          # Meet Elm\n          ```elm\n          -- Boolean\n          True  : Bool\n          False : Bool\n\n          42    : number  -- Int or Float depending on usage\n          3.14  : Float\n\n          \'a\'   : Char\n          \"abc\" : String\n          ```\n          '),
 				_1: {
 					ctor: '::',
-					_0: _xarvh$elm_slides$Slides$md('\n        # A function\n        ```elm\n        {-- A comment for the function below\n            The type signature indicates a function from\n            String to Bool\n        --}\n        hasOddLength : String -> Bool\n        hasOddLength s = String.length s % 2 == 1\n        ```\n        '),
+					_0: _xarvh$elm_slides$Slides$md('\n          # A function\n          ```elm\n          {-- A comment for the function below\n              The type signature indicates a function from\n              String to Bool\n          --}\n          hasOddLength : String -> Bool\n          hasOddLength s = String.length s % 2 == 1\n\n          -- lambda syntax\n          oddLambda = \\s -> String.length s % 2 == 1\n          ```\n          '),
 					_1: {
 						ctor: '::',
-						_0: _xarvh$elm_slides$Slides$mdFragments(
-							{
-								ctor: '::',
-								_0: '# Create a Data Type',
-								_1: {
+						_0: _xarvh$elm_slides$Slides$md('\n          # Conditions\n          ```elm\n          f : Int -> String\n          f n = if n > 0 then\n              \"One\"\n            else if n == 2 then\n              \"Two\"\n            else\n              \"Many\"\n          ```\n          '),
+						_1: {
+							ctor: '::',
+							_0: _xarvh$elm_slides$Slides$mdFragments(
+								{
 									ctor: '::',
-									_0: '\n            ```elm\n            type TrafficLight          -- The Data Type\n              = Green | Yellow | Red   -- Data Constructors\n            ```\n            ',
+									_0: '# Product Type',
 									_1: {
 										ctor: '::',
-										_0: '`TrafficLight` seen in type signatures',
+										_0: '\n              ```elm\n              -- Wraps address and weight\n              type Postable =        -- data type\n                Package String Float -- data constructor\n\n              Package \"Osloveien 1\" 2.3\n              ```\n              ',
 										_1: {
 											ctor: '::',
-											_0: '`Green`, `Yellow`, `Red` seen in function implementations',
-											_1: {ctor: '[]'}
+											_0: '`Postable` seen in type signatures',
+											_1: {
+												ctor: '::',
+												_0: '`Package` seen in function bodys',
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}),
+							_1: {
+								ctor: '::',
+								_0: _xarvh$elm_slides$Slides$mdFragments(
+									{
+										ctor: '::',
+										_0: '# Union Type',
+										_1: {
+											ctor: '::',
+											_0: '\n            ```elm\n            type TrafficLight         -- the data type\n              = Green | Yellow | Red  -- data constructors\n            ```\n            ',
+											_1: {
+												ctor: '::',
+												_0: '`TrafficLight` seen in type signatures',
+												_1: {
+													ctor: '::',
+													_0: '`Green`, `Yellow`, `Red` seen in function bodys',
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}),
+								_1: {
+									ctor: '::',
+									_0: _xarvh$elm_slides$Slides$md('\n          # Using our TrafficLight\n          ```elm\n          -- Notice that we use the data type in the type signature\n          -- (Types belong at the type level)\n          crossSafely : TrafficLight -> Bool\n          crossSafely tl =\n            case tl of\n              Green -> True -- pattern matching on fields\n              _ -> False    -- wildcard match\n          ```\n          '),
+									_1: {
+										ctor: '::',
+										_0: _xarvh$elm_slides$Slides$md('\n          # Record Syntax\n          ```elm\n          type alias Location =           -- type aliases for records\n            { line : Int\n            , column : Int\n            }\n\n          point =                         -- create a record\n            { x = 3, y = 4 }\n\n          point.x                         -- access field\n\n          List.map .x [point,{x=0,y=0}]   -- field access function\n\n          { point | x = 6 }               -- update a field\n\n          { point |                       -- update many fields\n              x = point.x + 1,\n              y = point.y + 1\n          }\n\n          dist {x,y} =                    -- pattern matching on fields\n            sqrt (x^2 + y^2)\n          ```\n          '),
+										_1: {
+											ctor: '::',
+											_0: _xarvh$elm_slides$Slides$mdFragments(
+												{
+													ctor: '::',
+													_0: '# Tuples and Lists',
+													_1: {
+														ctor: '::',
+														_0: '\n            ```elm\n            -- 4 identical lists (of type List Int)\n            myList = [1,2,3,4]\n            myList2 = 1 :: [2,3,4]\n            myList3 = 1 :: 2 :: 3 :: 4 :: []\n            ```\n            ',
+														_1: {
+															ctor: '::',
+															_0: '\n            ```elm\n            myTuple : (Char, Int)\n            myTuple = (\'a\', 1)\n\n            Tuple.first myTuple\n            ```\n          ',
+															_1: {ctor: '[]'}
+														}
+													}
+												}),
+											_1: {
+												ctor: '::',
+												_0: _xarvh$elm_slides$Slides$md('\n          # let / in\n          ```elm\n          span : List Int -> (Int, Int)\n          span xs\n            = let maybeMin = List.minimum xs\n                  maybeMax = List.maximum xs\n                  min = Maybe.withDefault 0 maybeMin\n                  max = Maybe.withDefault 0 maybeMax\n              in (min, max)\n          ```\n          '),
+												_1: {
+													ctor: '::',
+													_0: _xarvh$elm_slides$Slides$md('\n          # Higher-order functions\n          ```elm\n          List.map String.reverse [\"stressed\", \"desserts\"]\n\n          sevens = List.filter ((==) 7) [6,7,8]\n\n          List.tail <| List.range 1 (List.length sevens) -- <| to skip paranthesis\n\n          List.tail (List.range 1 (List.length sevens))  --  equivalent\n\n          (String.length << toString) 42 -- function composition\n          ```\n          '),
+													_1: {
+														ctor: '::',
+														_0: _xarvh$elm_slides$Slides$md('\n          # Currying\n          ```elm\n          concatenate : String -> String -> String\n          concatenate a b = a ++ b\n          ```\n          '),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
 										}
 									}
 								}
-							}),
-						_1: {
-							ctor: '::',
-							_0: _xarvh$elm_slides$Slides$md('\n          # Using our TrafficLight\n          ```elm\n          -- Notice that we use the data type in the type signature\n          -- (Types belong at the type level)\n          crossSafely : TrafficLight -> Bool\n          crossSafely tl =\n            case tl of\n              Green -> True -- Type destructed to Data constructor\n              _ -> False    -- Wildcard match\n          ```\n          '),
-							_1: {ctor: '[]'}
+							}
 						}
 					}
 				}
