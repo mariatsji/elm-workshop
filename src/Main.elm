@@ -36,6 +36,7 @@ main =
             [ "# The Elm Language"
             , "Functional frontend language"
             , "Statically typed"
+            , "Separate data and behaviour"
             , "Compiled frontend catches bugs before runtime"
             , "Once compiled, it works"
             ]
@@ -123,6 +124,25 @@ main =
           ```
           """
 
+          , mdFragments ["# Tuples and Lists"
+            , """
+              ```elm
+              -- 4 identical lists (of type List Int)
+              myList = [1,2,3,4]
+              myList2 = 1 :: [2,3,4]
+              myList3 = 1 :: 2 :: 3 :: 4 :: []
+              ```
+              """
+            , """
+              ```elm
+              myTuple : (Char, Int)
+              myTuple = ('a', 1)
+
+              Tuple.first myTuple
+              ```
+            """
+          ]
+
         , md """
           # Record Syntax
           ```elm
@@ -135,39 +155,20 @@ main =
             { x = 3, y = 4 }
 
           point.x                         -- access field
+          ```
+          """
 
-          List.map .x [point,{x=0,y=0}]   -- field access function
-
+        , md """
+          # Record Syntax 2
+          ```elm
           { point | x = 6 }               -- update a field
 
           { point |                       -- update many fields
               x = point.x + 1,
               y = point.y + 1
           }
-
-          dist {x,y} =                    -- pattern matching on fields
-            sqrt (x^2 + y^2)
           ```
           """
-
-        , mdFragments ["# Tuples and Lists"
-          , """
-            ```elm
-            -- 4 identical lists (of type List Int)
-            myList = [1,2,3,4]
-            myList2 = 1 :: [2,3,4]
-            myList3 = 1 :: 2 :: 3 :: 4 :: []
-            ```
-            """
-          , """
-            ```elm
-            myTuple : (Char, Int)
-            myTuple = ('a', 1)
-
-            Tuple.first myTuple
-            ```
-          """
-        ]
 
         , md """
           # let / in
@@ -202,6 +203,12 @@ main =
           ```elm
           concatenate : String -> String -> String
           concatenate a b = a ++ b
+
+          f : String -> String
+          f = concatenate "foo"
+
+          g : String
+          g = f "baz"
           ```
           """
         ]
