@@ -219,6 +219,6 @@ main =
           * hit `compile` (first compile is slow)
 
           # Exercises part 2
-          * 
+          * https://ellie-app.com/95xZbf26Ha1/2
           """
         ]
