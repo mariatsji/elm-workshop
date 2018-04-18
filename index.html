@@ -16656,8 +16656,12 @@ var _mariatsji$elm_workshop$Main$main = A2(
 														_0: _xarvh$elm_slides$Slides$md('\n          # Higher-order functions\n          ```elm\n          List.map String.reverse [\"stressed\", \"desserts\"]\n\n          sevens = List.filter ((==) 7) [6,7,8]\n\n          List.tail <| List.range 1 (List.length sevens) -- <| to skip paranthesis\n\n          List.tail (List.range 1 (List.length sevens))  --  equivalent\n\n          (String.length << toString) 42 -- function composition\n          ```\n          '),
 														_1: {
 															ctor: '::',
-															_0: _xarvh$elm_slides$Slides$md('\n          # Currying\n          ```elm\n          concatenate : String -> String -> String\n          concatenate a b = a ++ b\n          ```\n          '),
-															_1: {ctor: '[]'}
+															_0: _xarvh$elm_slides$Slides$md('\n          # Currying\n          ```elm\n          concatenate : String -> String -> String\n          concatenate a b = a ++ b\n\n          f : String -> String\n          f = concatenate \"foo\"\n\n          g : String\n          g = f \"baz\"\n          ```\n          '),
+															_1: {
+																ctor: '::',
+																_0: _xarvh$elm_slides$Slides$md('\n          # Exercises part 1\n          * https://ellie-app.com/8HbZ6Bg6Ta1/1\n          * hit `compile` (first compile is slow)\n\n          # Exercises part 2\n          * https://ellie-app.com/95xZbf26Ha1/2\n\n          # Create a calculator\n          * https://ellie-app.com/bXJgfb4SVa1/0\n          '),
+																_1: {ctor: '[]'}
+															}
 														}
 													}
 												}
@@ -16672,71 +16676,10 @@ var _mariatsji$elm_workshop$Main$main = A2(
 			}
 		}
 	})();
-var _mariatsji$elm_workshop$Part1$size = function (shape) {
-	var _p0 = shape;
-	if (_p0.ctor === 'Circle') {
-		return _p0._0;
-	} else {
-		return _p0._0;
-	}
-};
-var _mariatsji$elm_workshop$Part1$Square = function (a) {
-	return {ctor: 'Square', _0: a};
-};
-var _mariatsji$elm_workshop$Part1$toSquare = function (shape) {
-	var _p1 = shape;
-	if (_p1.ctor === 'Square') {
-		return shape;
-	} else {
-		return _mariatsji$elm_workshop$Part1$Square(_p1._0);
-	}
-};
-var _mariatsji$elm_workshop$Part1$Circle = function (a) {
-	return {ctor: 'Circle', _0: a};
-};
-var _mariatsji$elm_workshop$Part1$toCircle = function (shape) {
-	var _p2 = shape;
-	if (_p2.ctor === 'Circle') {
-		return shape;
-	} else {
-		return _mariatsji$elm_workshop$Part1$Circle(_p2._0);
-	}
-};
-var _mariatsji$elm_workshop$Part2$fib = function (x) {
-	return (_elm_lang$core$Native_Utils.cmp(x, 1) > 0) ? (_mariatsji$elm_workshop$Part2$fib(x - 1) + _mariatsji$elm_workshop$Part2$fib(x - 2)) : 1;
-};
-var _mariatsji$elm_workshop$Part2$f = function (n) {
-	return n * 2;
-};
-var _mariatsji$elm_workshop$Part2$biggerCircle = function (shape) {
-	return _elm_lang$core$Native_Utils.update(
-		shape,
-		{area: shape.area * 2});
-};
-var _mariatsji$elm_workshop$Part2$findRadius = function (_p0) {
-	var _p1 = _p0;
-	var rSquared = _p1.area / _elm_lang$core$Basics$pi;
-	return _elm_lang$core$Basics$sqrt(rSquared);
-};
-var _mariatsji$elm_workshop$Part2$Circle = function (a) {
-	return {area: a};
-};
 var Elm = {};
 Elm['Main'] = Elm['Main'] || {};
 if (typeof _mariatsji$elm_workshop$Main$main !== 'undefined') {
     _mariatsji$elm_workshop$Main$main(Elm['Main'], 'Main', undefined);
-}
-Elm['Main'] = Elm['Main'] || {};
-if (typeof _mariatsji$elm_workshop$Main$main !== 'undefined') {
-    _mariatsji$elm_workshop$Main$main(Elm['Main'], 'Main', undefined);
-}
-Elm['Part1'] = Elm['Part1'] || {};
-if (typeof _mariatsji$elm_workshop$Part1$main !== 'undefined') {
-    _mariatsji$elm_workshop$Part1$main(Elm['Part1'], 'Part1', undefined);
-}
-Elm['Part2'] = Elm['Part2'] || {};
-if (typeof _mariatsji$elm_workshop$Part2$main !== 'undefined') {
-    _mariatsji$elm_workshop$Part2$main(Elm['Part2'], 'Part2', undefined);
 }
 
 if (typeof define === "function" && define['amd'])

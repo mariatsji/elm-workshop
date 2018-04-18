@@ -214,14 +214,14 @@ main =
 
 
           , md """
-          # Exercises part 1
+          ## Exercises part 1
           * https://ellie-app.com/8HbZ6Bg6Ta1/1
           * hit `compile` (first compile is slow)
 
-          # Exercises part 2
+          ## Exercises part 2
           * https://ellie-app.com/95xZbf26Ha1/2
 
-          # Create a calculator
+          ## Create a calculator
           * https://ellie-app.com/bXJgfb4SVa1/0
           """
         ]
