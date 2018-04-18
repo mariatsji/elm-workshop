@@ -217,5 +217,8 @@ main =
           # Exercises part 1
           * https://ellie-app.com/8HbZ6Bg6Ta1/1
           * hit `compile` (first compile is slow)
+
+          # Exercises part 2
+          * 
           """
         ]
