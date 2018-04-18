@@ -16622,11 +16622,15 @@ var _mariatsji$elm_workshop$Main$main = A2(
 							_0: 'Statically typed',
 							_1: {
 								ctor: '::',
-								_0: 'Compiled frontend catches bugs before runtime',
+								_0: 'Separate data and behaviour',
 								_1: {
 									ctor: '::',
-									_0: 'Once compiled, it works',
-									_1: {ctor: '[]'}
+									_0: 'Compiled frontend catches bugs before runtime',
+									_1: {
+										ctor: '::',
+										_0: 'Once compiled, it works',
+										_1: {ctor: '[]'}
+									}
 								}
 							}
 						}
@@ -16686,33 +16690,41 @@ var _mariatsji$elm_workshop$Main$main = A2(
 									_0: _xarvh$elm_slides$Slides$md('\n          # Using our TrafficLight\n          ```elm\n          -- Notice that we use the data type in the type signature\n          -- (Types belong at the type level)\n          crossSafely : TrafficLight -> Bool\n          crossSafely tl =\n            case tl of\n              Green -> True -- pattern matching on fields\n              _ -> False    -- wildcard match\n          ```\n          '),
 									_1: {
 										ctor: '::',
-										_0: _xarvh$elm_slides$Slides$md('\n          # Record Syntax\n          ```elm\n          type alias Location =           -- type aliases for records\n            { line : Int\n            , column : Int\n            }\n\n          point =                         -- create a record\n            { x = 3, y = 4 }\n\n          point.x                         -- access field\n\n          List.map .x [point,{x=0,y=0}]   -- field access function\n\n          { point | x = 6 }               -- update a field\n\n          { point |                       -- update many fields\n              x = point.x + 1,\n              y = point.y + 1\n          }\n\n          dist {x,y} =                    -- pattern matching on fields\n            sqrt (x^2 + y^2)\n          ```\n          '),
-										_1: {
-											ctor: '::',
-											_0: _xarvh$elm_slides$Slides$mdFragments(
-												{
-													ctor: '::',
-													_0: '# Tuples and Lists',
-													_1: {
-														ctor: '::',
-														_0: '\n            ```elm\n            -- 4 identical lists (of type List Int)\n            myList = [1,2,3,4]\n            myList2 = 1 :: [2,3,4]\n            myList3 = 1 :: 2 :: 3 :: 4 :: []\n            ```\n            ',
-														_1: {
-															ctor: '::',
-															_0: '\n            ```elm\n            myTuple : (Char, Int)\n            myTuple = (\'a\', 1)\n\n            Tuple.first myTuple\n            ```\n          ',
-															_1: {ctor: '[]'}
-														}
-													}
-												}),
-											_1: {
+										_0: _xarvh$elm_slides$Slides$mdFragments(
+											{
 												ctor: '::',
-												_0: _xarvh$elm_slides$Slides$md('\n          # let / in\n          ```elm\n          span : List Int -> (Int, Int)\n          span xs\n            = let maybeMin = List.minimum xs\n                  maybeMax = List.maximum xs\n                  min = Maybe.withDefault 0 maybeMin\n                  max = Maybe.withDefault 0 maybeMax\n              in (min, max)\n          ```\n          '),
+												_0: '# Tuples and Lists',
 												_1: {
 													ctor: '::',
-													_0: _xarvh$elm_slides$Slides$md('\n          # Higher-order functions\n          ```elm\n          List.map String.reverse [\"stressed\", \"desserts\"]\n\n          sevens = List.filter ((==) 7) [6,7,8]\n\n          List.tail <| List.range 1 (List.length sevens) -- <| to skip paranthesis\n\n          List.tail (List.range 1 (List.length sevens))  --  equivalent\n\n          (String.length << toString) 42 -- function composition\n          ```\n          '),
+													_0: '\n              ```elm\n              -- 4 identical lists (of type List Int)\n              myList = [1,2,3,4]\n              myList2 = 1 :: [2,3,4]\n              myList3 = 1 :: 2 :: 3 :: 4 :: []\n              ```\n              ',
 													_1: {
 														ctor: '::',
-														_0: _xarvh$elm_slides$Slides$md('\n          # Currying\n          ```elm\n          concatenate : String -> String -> String\n          concatenate a b = a ++ b\n          ```\n          '),
+														_0: '\n              ```elm\n              myTuple : (Char, Int)\n              myTuple = (\'a\', 1)\n\n              Tuple.first myTuple\n              ```\n            ',
 														_1: {ctor: '[]'}
+													}
+												}
+											}),
+										_1: {
+											ctor: '::',
+											_0: _xarvh$elm_slides$Slides$md('\n          # Record Syntax\n          ```elm\n          type alias Location =           -- type aliases for records\n            { line : Int\n            , column : Int\n            }\n\n          point =                         -- create a record\n            { x = 3, y = 4 }\n\n          point.x                         -- access field\n          ```\n          '),
+											_1: {
+												ctor: '::',
+												_0: _xarvh$elm_slides$Slides$md('\n          # Record Syntax 2\n          ```elm\n          { point | x = 6 }               -- update a field\n\n          { point |                       -- update many fields\n              x = point.x + 1,\n              y = point.y + 1\n          }\n          ```\n          '),
+												_1: {
+													ctor: '::',
+													_0: _xarvh$elm_slides$Slides$md('\n          # let / in\n          ```elm\n          span : List Int -> (Int, Int)\n          span xs\n            = let maybeMin = List.minimum xs\n                  maybeMax = List.maximum xs\n                  min = Maybe.withDefault 0 maybeMin\n                  max = Maybe.withDefault 0 maybeMax\n              in (min, max)\n          ```\n          '),
+													_1: {
+														ctor: '::',
+														_0: _xarvh$elm_slides$Slides$md('\n          # Higher-order functions\n          ```elm\n          List.map String.reverse [\"stressed\", \"desserts\"]\n\n          sevens = List.filter ((==) 7) [6,7,8]\n\n          List.tail <| List.range 1 (List.length sevens) -- <| to skip paranthesis\n\n          List.tail (List.range 1 (List.length sevens))  --  equivalent\n\n          (String.length << toString) 42 -- function composition\n          ```\n          '),
+														_1: {
+															ctor: '::',
+															_0: _xarvh$elm_slides$Slides$md('\n          # Currying\n          ```elm\n          concatenate : String -> String -> String\n          concatenate a b = a ++ b\n\n          f : String -> String\n          f = concatenate \"foo\"\n\n          g : String\n          g = f \"baz\"\n          ```\n          '),
+															_1: {
+																ctor: '::',
+																_0: _xarvh$elm_slides$Slides$md('\n          # Exercises part 1\n          * https://ellie-app.com/8HbZ6Bg6Ta1/1\n          * hit `compile` (first compile is slow)\n\n          # Exercises part 2\n          * https://ellie-app.com/95xZbf26Ha1/2\n\n          # Create a calculator\n          * https://ellie-app.com/bXJgfb4SVa1/0\n          '),
+																_1: {ctor: '[]'}
+															}
+														}
 													}
 												}
 											}
