@@ -17,7 +17,8 @@ customStyleOptions =
                     [ maxWidth (px 100)
                     ]
                 ]
-            <| Slides.Styles.elmMinimalist (hex "#fff") (hex "#ccc") (px 16) (hex "#000")
+            <|
+                Slides.Styles.elmMinimalist (hex "#fff") (hex "#ccc") (px 16) (hex "#000")
     }
 
 
@@ -31,7 +32,6 @@ main =
 
         ##### Christopher Kolstad, Stig Kleppe-Jørgensen, Sjur Millidahl
         """
-
         , mdFragments
             [ "# The Elm Language"
             , "Functional frontend language"
@@ -40,7 +40,6 @@ main =
             , "Compiled frontend catches bugs before runtime"
             , "Once compiled, it works"
             ]
-
         , md """
           # Meet Elm
           ```elm
@@ -55,7 +54,6 @@ main =
           "abc" : String
           ```
           """
-
         , md """
           # A function
           ```elm
@@ -70,7 +68,6 @@ main =
           oddLambda = \\s -> String.length s % 2 == 1
           ```
           """
-
         , md """
           # Conditions
           ```elm
@@ -83,7 +80,6 @@ main =
               "Many"
           ```
           """
-
         , mdFragments
             [ "# Product Type"
             , """
@@ -98,7 +94,6 @@ main =
             , "`Postable` seen in type signatures"
             , "`Package` seen in function bodys"
             ]
-
         , mdFragments
             [ "# Union Type"
             , """
@@ -110,7 +105,6 @@ main =
             , "`TrafficLight` seen in type signatures"
             , "`Green`, `Yellow`, `Red` seen in function bodys"
             ]
-
         , md """
           # Using our TrafficLight
           ```elm
@@ -123,8 +117,8 @@ main =
               _ -> False    -- wildcard match
           ```
           """
-
-          , mdFragments ["# Tuples and Lists"
+        , mdFragments
+            [ "# Tuples and Lists"
             , """
               ```elm
               -- 4 identical lists (of type List Int)
@@ -141,8 +135,7 @@ main =
               Tuple.first myTuple
               ```
             """
-          ]
-
+            ]
         , md """
           # Record Syntax
           ```elm
@@ -157,7 +150,6 @@ main =
           point.x                         -- access field
           ```
           """
-
         , md """
           # Record Syntax 2
           ```elm
@@ -169,7 +161,6 @@ main =
           }
           ```
           """
-
         , md """
           # let / in
           ```elm
@@ -182,8 +173,7 @@ main =
               in (min, max)
           ```
           """
-
-          , md """
+        , md """
           # Higher-order functions
           ```elm
           List.map String.reverse ["stressed", "desserts"]
@@ -197,8 +187,7 @@ main =
           (String.length << toString) 42 -- function composition
           ```
           """
-
-          , md """
+        , md """
           # Currying
           ```elm
           concatenate : String -> String -> String

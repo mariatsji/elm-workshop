@@ -19,7 +19,7 @@ http://elm-lang.org/docs/syntax#let-expressions
 
 
 findRadius : Circle -> Float
-findRadius { area } =
+findRadius (Circle area) =
     let
         rSquared =
             area / pi
