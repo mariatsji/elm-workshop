@@ -219,7 +219,7 @@ main =
           * hit `compile` (first compile is slow)
 
           ## Exercises part 2
-          * https://ellie-app.com/95xZbf26Ha1/2
+          * https://ellie-app.com/9zF8Whdzpa1/0
 
           ## Create a calculator
           * https://ellie-app.com/bXJgfb4SVa1/3
