@@ -69,8 +69,8 @@ update msg model =
 view : Model -> Html Msg
 view model =
         div []
-            [ input [ placeholder model.a, myStyle, onInput EnterA ] [ ]
-            , input [ placeholder model.b, myStyle, onInput EnterB ] [ ]
+            [ input [ placeholder model.a, validationStyle model.a, onInput EnterA ] [ ]
+            , input [ placeholder model.b, validationStyle model.b, onInput EnterB ] [ ]
             , button [ onClick Add ] [ text "+" ]
             , button [ onClick Sub ] [ text "-" ]
             , button [ onClick Mult ] [ text "*" ]
@@ -78,12 +78,22 @@ view model =
             , div [ myStyle ] [ text (toString (.result model)) ]
             ]
 
-
+myStyle : Attribute msg
 myStyle =
     style
-        [ ( "width", "100%" )
-        , ( "height", "40px" )
-        , ( "padding", "10px 0" )
-        , ( "font-size", "2em" )
-        , ( "text-align", "center" )
-        ]
+        styleList
+
+styleList : List (String, String)
+styleList = [ ( "width", "100%" )
+  , ( "height", "40px" )
+  , ( "padding", "10px 0" )
+  , ( "font-size", "2em" )
+  , ( "text-align", "center" )
+  ]
+
+validationStyle : String -> Attribute msg
+validationStyle s =
+    let color = case (String.toFloat s) of
+      Result.Ok a -> "black"
+      _ -> "red"
+    in style (( "color", color ) :: styleList)
