@@ -212,7 +212,15 @@ main =
           ```
           """
 
+          , md """
+          # Debug
+          ```elm
+          log : String -> a -> a
 
+          add : Int -> Int -> Int
+          add a b = Debug.log "a is" a + Debug.log "b is" b
+          ```
+          """
           , md """
           ## Exercises part 1
           * https://ellie-app.com/8HbZ6Bg6Ta1/1
@@ -225,10 +233,13 @@ main =
           , md """
           ## The Elm Architecture
           * https://guide.elm-lang.org/architecture/
+          * Input Validation
           """
 
-          , md """
-          ## Create a calculator
-          * https://ellie-app.com/bXJgfb4SVa1/3
-          """
+          , mdFragments
+          [ "## Create a calculator"
+          , "new buttons : subtract, multiply, divide"
+          , "input validation, coloring illegal input red"
+          , "https://ellie-app.com/bXJgfb4SVa1/3"
+          ]
         ]

@@ -16659,14 +16659,35 @@ var _mariatsji$elm_workshop$Main$main = A2(
 															_0: _xarvh$elm_slides$Slides$md('\n          # Currying\n          ```elm\n          concatenate : String -> String -> String\n          concatenate a b = a ++ b\n\n          f : String -> String\n          f = concatenate \"foo\"\n\n          g : String\n          g = f \"baz\"\n          ```\n          '),
 															_1: {
 																ctor: '::',
-																_0: _xarvh$elm_slides$Slides$md('\n          ## Exercises part 1\n          * https://ellie-app.com/8HbZ6Bg6Ta1/1\n          * hit `compile` (first compile is slow)\n\n          ## Exercises part 2\n          * https://ellie-app.com/9zF8Whdzpa1/0\n          '),
+																_0: _xarvh$elm_slides$Slides$md('\n          # Debug\n          ```elm\n          log : String -> a -> a\n\n          debugIt : Int -> Int -> Int\n          debugIt a b = Debug.log \"a is\" a + Debug.log \"b is\" b\n          ```\n          '),
 																_1: {
 																	ctor: '::',
-																	_0: _xarvh$elm_slides$Slides$md('\n          ## The Elm Architecture\n          * https://guide.elm-lang.org/architecture/\n          '),
+																	_0: _xarvh$elm_slides$Slides$md('\n          ## Exercises part 1\n          * https://ellie-app.com/8HbZ6Bg6Ta1/1\n          * hit `compile` (first compile is slow)\n\n          ## Exercises part 2\n          * https://ellie-app.com/9zF8Whdzpa1/0\n          '),
 																	_1: {
 																		ctor: '::',
-																		_0: _xarvh$elm_slides$Slides$md('\n          ## Create a calculator\n          * https://ellie-app.com/bXJgfb4SVa1/3\n          '),
-																		_1: {ctor: '[]'}
+																		_0: _xarvh$elm_slides$Slides$md('\n          ## The Elm Architecture\n          * https://guide.elm-lang.org/architecture/\n          * Input Validation\n          '),
+																		_1: {
+																			ctor: '::',
+																			_0: _xarvh$elm_slides$Slides$mdFragments(
+																				{
+																					ctor: '::',
+																					_0: '## Create a calculator',
+																					_1: {
+																						ctor: '::',
+																						_0: 'new buttons : subtract, multiply, divide',
+																						_1: {
+																							ctor: '::',
+																							_0: 'input validation, coloring illegal input red',
+																							_1: {
+																								ctor: '::',
+																								_0: 'https://ellie-app.com/bXJgfb4SVa1/3',
+																								_1: {ctor: '[]'}
+																							}
+																						}
+																					}
+																				}),
+																			_1: {ctor: '[]'}
+																		}
 																	}
 																}
 															}
