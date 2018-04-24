@@ -220,7 +220,14 @@ main =
 
           ## Exercises part 2
           * https://ellie-app.com/9zF8Whdzpa1/0
+          """
 
+          , md """
+          ## The Elm Architecture
+          * https://guide.elm-lang.org/architecture/
+          """
+
+          , md """
           ## Create a calculator
           * https://ellie-app.com/bXJgfb4SVa1/3
           """
