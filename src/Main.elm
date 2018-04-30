@@ -224,23 +224,23 @@ main =
 
           , md """
           ## Exercises part 1
-          * https://ellie-app.com/8HbZ6Bg6Ta1/1
+          * https://ellie-app.com/6k9QFfjWVa1/0
           * hit `compile` (first compile is slow)
 
           ## Exercises part 2
-          * https://ellie-app.com/9zF8Whdzpa1/0
+          * https://ellie-app.com/6kSsbCx2La1/0
           """
 
           , md """
           ## The Elm Architecture
           * https://guide.elm-lang.org/architecture/
-          * Input Validation
+          * Input Validation : https://ellie-app.com/3JDhR5FN4a1/2
           """
 
           , mdFragments
           [ "## Create a calculator"
           , "new buttons : subtract, multiply, divide"
           , "input validation, coloring illegal input red"
-          , "https://ellie-app.com/bXJgfb4SVa1/3"
+          , "https://ellie-app.com/6q75CLPHWa1/0"
           ]
         ]
