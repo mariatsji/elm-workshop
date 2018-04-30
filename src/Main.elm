@@ -221,6 +221,7 @@ main =
           add a b = Debug.log "a is" a + Debug.log "b is" b
           ```
           """
+
           , md """
           ## Exercises part 1
           * https://ellie-app.com/8HbZ6Bg6Ta1/1
