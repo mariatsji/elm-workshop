@@ -16545,7 +16545,7 @@ var _mariatsji$elm_workshop$Main$main = A2(
 	_mariatsji$elm_workshop$Main$customStyleOptions,
 	{
 		ctor: '::',
-		_0: _xarvh$elm_slides$Slides$md('\n        # ![Elm logo](images/elm-logo.png \"FINN.no\") Elm, hands-on\n\n        ![FINN logo](images/finn-logo.png \"FINN.no\")\n\n        ##### Christopher Kolstad, Stig Kleppe-Jørgensen, Sjur Millidahl\n        '),
+		_0: _xarvh$elm_slides$Slides$md('\n        # ![Elm logo](images/elm-logo.png \"FINN.no\") Elm, hands-on\n\n        ![FINN logo](images/finn-logo.png \"FINN.no\")\n\n        ##### Stig Kleppe-Jørgensen, Sjur Millidahl\n        '),
 		_1: {
 			ctor: '::',
 			_0: _xarvh$elm_slides$Slides$mdFragments(
@@ -16653,7 +16653,7 @@ var _mariatsji$elm_workshop$Main$main = A2(
 													_0: _xarvh$elm_slides$Slides$md('\n          # let / in\n          ```elm\n          span : List Int -> (Int, Int)\n          span xs\n            = let maybeMin = List.minimum xs\n                  maybeMax = List.maximum xs\n                  min = Maybe.withDefault 0 maybeMin\n                  max = Maybe.withDefault 0 maybeMax\n              in (min, max)\n          ```\n          '),
 													_1: {
 														ctor: '::',
-														_0: _xarvh$elm_slides$Slides$md('\n          # Higher-order functions\n          ```elm\n          List.map String.reverse [\"stressed\", \"desserts\"]\n\n          sevens = List.filter ((==) 7) [6,7,8]\n\n          List.tail <| List.range 1 (List.length sevens) -- <| to skip paranthesis\n\n          List.tail (List.range 1 (List.length sevens))  --  equivalent\n\n          (String.length << toString) 42 -- function composition\n          ```\n          '),
+														_0: _xarvh$elm_slides$Slides$md('\n          # Higher-order functions\n          ```elm\n          List.map String.reverse [\"stressed\", \"desserts\"]\n\n          sevens = List.filter ((==) 7) [6,7,8]\n\n          List.tail <| List.range 1 <| List.length sevens -- <| to skip paranthesis\n\n          List.tail (List.range 1 (List.length sevens))  --  equivalent\n\n          (String.length << toString) 42 -- function composition\n          ```\n          '),
 														_1: {
 															ctor: '::',
 															_0: _xarvh$elm_slides$Slides$md('\n          # Currying\n          ```elm\n          concatenate : String -> String -> String\n          concatenate a b = a ++ b\n\n          f : String -> String\n          f = concatenate \"foo\"\n\n          g : String\n          g = f \"baz\"\n          ```\n          '),

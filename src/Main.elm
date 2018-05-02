@@ -29,7 +29,7 @@ main =
 
         ![FINN logo](images/finn-logo.png "FINN.no")
 
-        ##### Christopher Kolstad, Stig Kleppe-Jørgensen, Sjur Millidahl
+        ##### Stig Kleppe-Jørgensen, Sjur Millidahl
         """
 
         , mdFragments
@@ -190,7 +190,7 @@ main =
 
           sevens = List.filter ((==) 7) [6,7,8]
 
-          List.tail <| List.range 1 (List.length sevens) -- <| to skip paranthesis
+          List.tail <| List.range 1 <| List.length sevens -- <| to skip paranthesis
 
           List.tail (List.range 1 (List.length sevens))  --  equivalent
 
