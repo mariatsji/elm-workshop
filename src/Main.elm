@@ -48,7 +48,7 @@ main =
           True  : Bool
           False : Bool
 
-          42    : number  -- Int or Float depending on usage
+          42    : Int
           3.14  : Float
 
           'a'   : Char
