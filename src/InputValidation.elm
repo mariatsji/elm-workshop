@@ -2,7 +2,7 @@
 -- https://guide.elm-lang.org/architecture/user_input/buttons.html
 
 
-module Calculator exposing (..)
+module InputValidation exposing (..)
 
 import Html exposing (Attribute, Html, beginnerProgram, button, div, input, text)
 import Html.Attributes exposing (..)
@@ -47,17 +47,19 @@ view model =
         ]
 
 
+oldEnough : Float -> Result String Bool
+oldEnough age = if age >= 18 then Result.Ok True else Result.Err "Not 18"
+
 validate : String -> Attribute msg
 validate s =
     let
         res =
             String.toFloat s
 
-        oldEnough =
-            Result.map ((>=) 18) res
+        allGood = res |> Result.andThen oldEnough
 
         color =
-            case oldEnough of
+            case allGood of
                 Result.Ok _ ->
                     "black"
 
