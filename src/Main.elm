@@ -234,7 +234,7 @@ main =
           , md """
           ## The Elm Architecture
           * https://guide.elm-lang.org/architecture/
-          * Input Validation : https://ellie-app.com/5wBYmfXNra1/1
+          * Input Validation : https://ellie-app.com/rVRHpPnbxa1/0
           """
 
           , mdFragments
