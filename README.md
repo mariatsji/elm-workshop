@@ -10,6 +10,8 @@ Use an IDE with Elm syntax highlighting. Choices :
 
 # Local Development
 
+    npm install
+
 ## Tests
     elm-test watch
 
