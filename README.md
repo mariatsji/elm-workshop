@@ -8,11 +8,10 @@ Use an IDE with Elm syntax highlighting. Choices :
 - Atom with elm-package
 - Something else
 
-# Make
-    ./make.sh
+# Local Development
 
-# Run tests
-    elm test --watch
+## Tests
+    elm-test watch
 
-# Serve slides
-  ./serve.sh
+## Serve slides
+    npm run start
