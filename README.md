@@ -13,7 +13,7 @@ Use an IDE with Elm syntax highlighting. Choices :
     npm install
 
 ## Tests
-    elm-test watch
+    npm run test
 
 ## Serve slides
     npm run start
