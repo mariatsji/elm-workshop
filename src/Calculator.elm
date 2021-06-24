@@ -4,13 +4,14 @@
 
 module Calculator exposing (..)
 
-import Html exposing (Attribute, Html, beginnerProgram, button, div, input, text)
+import Browser
+import Html exposing (Attribute, Html, button, div, input, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput)
 
 
 main =
-    beginnerProgram { model = init, view = view, update = update }
+    Browser.sandbox { init = init, view = view, update = update }
 
 
 
@@ -46,20 +47,33 @@ type Msg
     | Div
 
 
-
-
 update : Msg -> Model -> Model
 update msg model =
-              let parsedA = Result.withDefault 0 (String.toFloat model.a)
-                  parsedB = Result.withDefault 0 (String.toFloat model.b)
-              in
-                  case msg of
-                      EnterA newA -> { model | a = newA }
-                      EnterB newB -> { model | b = newB }
-                      Add -> { model | result = parsedA + parsedB }
-                      Sub -> { model | result = parsedA - parsedB }
-                      Mult -> { model | result = parsedA * parsedB }
-                      Div  -> { model | result = parsedA / parsedB }
+    let
+        parsedA =
+            Maybe.withDefault 0 (String.toFloat model.a)
+
+        parsedB =
+            Maybe.withDefault 0 (String.toFloat model.b)
+    in
+    case msg of
+        EnterA newA ->
+            { model | a = newA }
+
+        EnterB newB ->
+            { model | b = newB }
+
+        Add ->
+            { model | result = parsedA + parsedB }
+
+        Sub ->
+            { model | result = parsedA - parsedB }
+
+        Mult ->
+            { model | result = parsedA * parsedB }
+
+        Div ->
+            { model | result = parsedA / parsedB }
 
 
 
@@ -68,32 +82,41 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-        div []
-            [ input [ placeholder model.a, validationStyle model.a, onInput EnterA ] [ ]
-            , input [ placeholder model.b, validationStyle model.b, onInput EnterB ] [ ]
-            , button [ onClick Add ] [ text "+" ]
-            , button [ onClick Sub ] [ text "-" ]
-            , button [ onClick Mult ] [ text "*" ]
-            , button [ onClick Div ] [ text "/" ]
-            , div [ myStyle ] [ text (toString (.result model)) ]
-            ]
+    div []
+        [ input ([ placeholder model.a, onInput EnterA ] ++ validationStyle model.a) []
+        , input ([ placeholder model.b, onInput EnterB ] ++ validationStyle model.b) []
+        , button [ onClick Add ] [ text "+" ]
+        , button [ onClick Sub ] [ text "-" ]
+        , button [ onClick Mult ] [ text "*" ]
+        , button [ onClick Div ] [ text "/" ]
+        , div myStyle [ text (String.fromFloat (.result model)) ]
+        ]
 
-myStyle : Attribute msg
+
+myStyle : List (Attribute msg)
 myStyle =
-    style
-        styleList
+    List.map (\( s1, s2 ) -> style s1 s2) styleList
 
-styleList : List (String, String)
-styleList = [ ( "width", "100%" )
-  , ( "height", "40px" )
-  , ( "padding", "10px 0" )
-  , ( "font-size", "2em" )
-  , ( "text-align", "center" )
-  ]
 
-validationStyle : String -> Attribute msg
+styleList : List ( String, String )
+styleList =
+    [ ( "width", "100%" )
+    , ( "height", "40px" )
+    , ( "padding", "10px 0" )
+    , ( "font-size", "2em" )
+    , ( "text-align", "center" )
+    ]
+
+
+validationStyle : String -> List (Attribute msg)
 validationStyle s =
-    let color = case (String.toFloat s) of
-      Result.Ok a -> "black"
-      _ -> "red"
-    in style (( "color", color ) :: styleList)
+    let
+        color =
+            case String.toFloat s of
+                Just _ ->
+                    "black"
+
+                Nothing ->
+                    "red"
+    in
+    style "color" color :: myStyle

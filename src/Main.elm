@@ -1,23 +1,23 @@
-module Main exposing (..)
+module Main exposing (main)
 
-import Html.Attributes exposing (src, alt, height, width, style, align)
-import Html exposing (Html, p, body, div, h1, img, text, span)
+import Css exposing (hex, maxWidth, px)
+import Css.Global exposing (code, img)
+import List
 import Slides exposing (md, mdFragments, slidesDefaultOptions)
-import Slides.Styles exposing (elmMinimalist)
-import List exposing (append)
-import Css exposing (maxWidth, px, hex)
-import Css.Elements exposing (img)
+import Slides.Styles
 
 
 customStyleOptions =
     { slidesDefaultOptions
         | style =
             List.append
-                [ Css.Elements.img
-                    [ maxWidth (px 100)
-                    ]
-                ]
-            <| Slides.Styles.elmMinimalist (hex "#fff") (hex "#ccc") (px 16) (hex "#000")
+                [ img [ maxWidth (px 100) ] ]
+            <|
+                Slides.Styles.elmMinimalist
+                    (hex "#fff")
+                    (hex "#ccc")
+                    (px 16)
+                    (hex "#000")
     }
 
 
@@ -31,7 +31,6 @@ main =
 
         ##### Christopher Kolstad, Stig Kleppe-Jørgensen, Sjur Millidahl
         """
-
         , mdFragments
             [ "# The Elm Language"
             , "Functional frontend language"
@@ -39,7 +38,6 @@ main =
             , "Compiled frontend catches bugs before runtime"
             , "Once compiled, it works"
             ]
-
         , md """
           # Meet Elm
           ```elm
@@ -54,7 +52,6 @@ main =
           "abc" : String
           ```
           """
-
         , md """
           # A function
           ```elm
@@ -69,7 +66,6 @@ main =
           oddLambda = \\s -> String.length s % 2 == 1
           ```
           """
-
         , md """
           # Conditions
           ```elm
@@ -82,7 +78,6 @@ main =
               "Many"
           ```
           """
-
         , mdFragments
             [ "# Product Type"
             , """
@@ -97,7 +92,6 @@ main =
             , "`Postable` seen in type signatures"
             , "`Package` seen in function bodys"
             ]
-
         , mdFragments
             [ "# Union Type"
             , """
@@ -109,7 +103,6 @@ main =
             , "`TrafficLight` seen in type signatures"
             , "`Green`, `Yellow`, `Red` seen in function bodys"
             ]
-
         , md """
           # Using our TrafficLight
           ```elm
@@ -122,7 +115,6 @@ main =
               _ -> False    -- wildcard match
           ```
           """
-
         , md """
           # Record Syntax
           ```elm
@@ -149,9 +141,9 @@ main =
             sqrt (x^2 + y^2)
           ```
           """
-
-        , mdFragments ["# Tuples and Lists"
-          , """
+        , mdFragments
+            [ "# Tuples and Lists"
+            , """
             ```elm
             -- 4 identical lists (of type List Int)
             myList = [1,2,3,4]
@@ -159,7 +151,7 @@ main =
             myList3 = 1 :: 2 :: 3 :: 4 :: []
             ```
             """
-          , """
+            , """
             ```elm
             myTuple : (Char, Int)
             myTuple = ('a', 1)
@@ -167,8 +159,7 @@ main =
             Tuple.first myTuple
             ```
           """
-        ]
-
+            ]
         , md """
           # let / in
           ```elm
@@ -181,8 +172,7 @@ main =
               in (min, max)
           ```
           """
-
-          , md """
+        , md """
           # Higher-order functions
           ```elm
           List.map String.reverse ["stressed", "desserts"]
@@ -196,8 +186,7 @@ main =
           (String.length << toString) 42 -- function composition
           ```
           """
-
-          , md """
+        , md """
           # Currying
           ```elm
           concatenate : String -> String -> String

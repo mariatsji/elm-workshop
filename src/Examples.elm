@@ -1,9 +1,11 @@
 module Main exposing (..)
 
-import Html exposing (Html, Attribute, beginnerProgram, text, div, input, li, ul)
+import Browser
+import Html exposing (Attribute, Html, div, input, li, text, ul)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onInput)
 import String
+
 
 
 {--
@@ -17,7 +19,7 @@ Task 2 : create your own text transformation, any way you like.
 
 
 main =
-    beginnerProgram { model = "", view = view, update = update }
+    Browser.sandbox { init = "", view = view, update = update }
 
 
 
@@ -73,7 +75,7 @@ listAligned content =
         toLi =
             \x -> li [] [ text x ]
     in
-        ul [] <| List.map toLi padded
+    ul [] <| List.map toLi padded
 
 
 
@@ -83,29 +85,27 @@ listAligned content =
 view : Model -> Html Msg
 view content =
     div []
-        [ input [ placeholder "Text to edit", onInput NewContent, inputStyle ] []
-        , div [ outputStyle ] [ listAligned content ]
+        [ input (inputStyle ++ [ placeholder "Text to edit", onInput NewContent ]) []
+        , div outputStyle [ listAligned content ]
         ]
 
 
-inputStyle : Html.Attribute msg
+inputStyle : List (Html.Attribute msg)
 inputStyle =
-    style
-        [ ( "width", "100%" )
-        , ( "height", "40px" )
-        , ( "padding", "10px 0" )
-        , ( "font-size", "2em" )
-        , ( "text-align", "center" )
-        ]
+    [ style "width" "100%"
+    , style "height" "40px"
+    , style "padding" "10px 0"
+    , style "font-size" "2em"
+    , style "text-align" "center"
+    ]
 
 
-outputStyle : Html.Attribute msg
+outputStyle : List (Html.Attribute msg)
 outputStyle =
-    style
-        [ ( "width", "100%" )
-        , ( "height", "40px" )
-        , ( "padding", "0" )
-        , ( "font-size", "2em" )
-        , ( "text-align", "left" )
-        , ( "font-family", "monospace" )
-        ]
+    [ style "width" "100%"
+    , style "height" "40px"
+    , style "padding" "0"
+    , style "font-size" "2em"
+    , style "text-align" "left"
+    , style "font-family" "monospace"
+    ]
