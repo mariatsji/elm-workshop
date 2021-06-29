@@ -1,8 +1,8 @@
 # Setup
 
-Download nodejs first if you are missing npm : [get-npm](https://www.npmjs.com/get-npm)
-Download elm for your platform : [elm-lang](https://guide.elm-lang.org/install.html)
-Download elm-test using npm : https://www.npmjs.com/package/elm-test
+- Download nodejs first if you are missing npm : [get-npm](https://www.npmjs.com/get-npm)
+- Download elm for your platform : [elm-lang](https://guide.elm-lang.org/install.html)
+- Download elm-test using npm : https://www.npmjs.com/package/elm-test
 
 ## Nice to have
 
