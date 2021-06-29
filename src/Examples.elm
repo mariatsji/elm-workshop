@@ -18,6 +18,7 @@ Task 2 : create your own text transformation, any way you like.
 --}
 
 
+main : Program () String Msg
 main =
     Browser.sandbox { init = "", view = view, update = update }
 
@@ -39,7 +40,7 @@ type Msg
 
 
 update : Msg -> Model -> Model
-update (NewContent content) oldContent =
+update (NewContent content) _ =
     content
 
 

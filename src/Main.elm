@@ -173,24 +173,32 @@ main =
           ```
           """
         , md """
+          # Currying
+          ```elm
+          concatenate : String -> String -> String
+          concatenate a b = a ++ b
+
+          -- String -> String
+          concatenate "hello"
+          ```
+          """
+        , md """
           # Higher-order functions
           ```elm
           List.map String.reverse ["stressed", "desserts"]
 
           sevens = List.filter ((==) 7) [6,7,8]
 
-          List.tail <| List.range 1 (List.length sevens) -- <| to skip paranthesis
+          -- (|>) : a -> (a -> b) -> b
+          "hello" |> String.length
 
-          List.tail (List.range 1 (List.length sevens))  --  equivalent
-
-          (String.length << toString) 42 -- function composition
+          -- (>>) :  (a -> b) -> (b -> c) -> a -> c
+          (String.length >> ((+) 1)) "yo"
           ```
           """
         , md """
-          # Currying
-          ```elm
-          concatenate : String -> String -> String
-          concatenate a b = a ++ b
-          ```
-          """
+            # Finding more packages
+            
+            ## [https://package.elm-lang.org](https://package.elm-lang.org/)
+        """
         ]

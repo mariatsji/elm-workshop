@@ -24,7 +24,7 @@ findRadius { area } =
         rSquared =
             area / pi
     in
-        sqrt rSquared
+    sqrt rSquared
 
 
 
@@ -68,5 +68,6 @@ fib : Int -> Int
 fib x =
     if x > 1 then
         fib (x - 1) + fib (x - 2)
+
     else
         1
