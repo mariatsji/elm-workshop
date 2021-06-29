@@ -16,8 +16,7 @@ module Part1 exposing (..)
 
 
 type Shape
-    = Circle Float
-    | Square Float
+    
 
 
 
@@ -36,13 +35,6 @@ We use a case expression to implement the function here.
 
 
 size : Shape -> Float
-size shape =
-    case shape of
-        Circle diameter ->
-            diameter
-
-        Square side ->
-            side
 
 
 
@@ -55,14 +47,6 @@ size shape =
 
 
 toCircle : Shape -> Shape
-toCircle shape =
-    case shape of
-        Circle x ->
-            shape
-
-        Square x ->
-            Circle x
-
 
 
 {--
@@ -74,10 +58,3 @@ toCircle shape =
 
 
 toSquare : Shape -> Shape
-toSquare shape =
-    case shape of
-        Square x ->
-            shape
-
-        Circle x ->
-            Square x

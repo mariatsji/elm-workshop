@@ -19,12 +19,7 @@ http://elm-lang.org/docs/syntax#let-expressions
 
 
 findRadius : Circle -> Float
-findRadius { area } =
-    let
-        rSquared =
-            area / pi
-    in
-    sqrt rSquared
+
 
 
 
@@ -37,8 +32,7 @@ http://elm-lang.org/docs/syntax#records
 
 
 biggerCircle : Circle -> Circle
-biggerCircle shape =
-    { shape | area = shape.area * 2 }
+
 
 
 
@@ -51,8 +45,7 @@ Read about functions and lambdas here : http://elm-lang.org/docs/syntax#function
 
 
 f : Int -> Int
-f =
-    \n -> n * 2
+
 
 
 
@@ -65,9 +58,4 @@ of the two previous fibonacci numbers in the sequence, and the first two being 1
 
 
 fib : Int -> Int
-fib x =
-    if x > 1 then
-        fib (x - 1) + fib (x - 2)
 
-    else
-        1
