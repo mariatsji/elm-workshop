@@ -14,3 +14,4 @@ https://package.elm-lang.org/packages/elm/json/latest/Json-Encode#string
 https://package.elm-lang.org/packages/elm/json/latest/Json-Encode#int
 --}
 toJSON : Person -> String
+toJSON _ = ""

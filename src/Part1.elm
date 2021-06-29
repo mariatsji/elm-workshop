@@ -1,7 +1,7 @@
 module Part1 exposing (..)
 
 {--
-  Complete this newly invented type caled `Shape`.
+  Complete this newly invented type caled `Shape` (replace the right hand side of the definition).
   It should have two Data Constructors that replace the dummy datatype `Todo`
   One should be called `Circle` and contain a Float to represent a diameter in cm
   The other should be called `Square` and contain a Float to represent one of (the equal) side lengths in cm
@@ -15,7 +15,7 @@ module Part1 exposing (..)
 --}
 
 
-type Shape
+type Shape = Shape
     
 
 
@@ -35,6 +35,7 @@ We use a case expression to implement the function here.
 
 
 size : Shape -> Float
+size _ = 0.0
 
 
 
@@ -47,6 +48,7 @@ size : Shape -> Float
 
 
 toCircle : Shape -> Shape
+toCircle _ = Shape
 
 
 {--
@@ -58,3 +60,4 @@ toCircle : Shape -> Shape
 
 
 toSquare : Shape -> Shape
+toSquare _ = Shape
