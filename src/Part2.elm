@@ -19,8 +19,8 @@ http://elm-lang.org/docs/syntax#let-expressions
 
 
 findRadius : Circle -> Float
-findRadius _ = 0.0
-
+findRadius _ =
+    0.0
 
 
 
@@ -33,8 +33,8 @@ http://elm-lang.org/docs/syntax#records
 
 
 biggerCircle : Circle -> Circle
-biggerCircle _ = Circle 0.0
-
+biggerCircle _ =
+    Circle 0.0
 
 
 
@@ -47,8 +47,8 @@ Read about functions and lambdas here : http://elm-lang.org/docs/syntax#function
 
 
 f : Int -> Int
-f _ = 0
-
+f _ =
+    0
 
 
 
@@ -61,4 +61,5 @@ of the two previous fibonacci numbers in the sequence, and the first two being 1
 
 
 fib : Int -> Int
-fib _ = 0
+fib _ =
+    0

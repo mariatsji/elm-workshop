@@ -15,8 +15,8 @@ module Part1 exposing (..)
 --}
 
 
-type Shape = Shape
-    
+type Shape
+    = Shape
 
 
 
@@ -35,7 +35,8 @@ We use a case expression to implement the function here.
 
 
 size : Shape -> Float
-size _ = 0.0
+size _ =
+    0.0
 
 
 
@@ -48,7 +49,9 @@ size _ = 0.0
 
 
 toCircle : Shape -> Shape
-toCircle _ = Shape
+toCircle _ =
+    Shape
+
 
 
 {--
@@ -60,4 +63,5 @@ toCircle _ = Shape
 
 
 toSquare : Shape -> Shape
-toSquare _ = Shape
+toSquare _ =
+    Shape
